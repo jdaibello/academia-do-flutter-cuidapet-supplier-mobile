@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.academiadoflutter.cuidapet_supplier_mobile">
-   <application
+   <application android:usesCleartextTraffic="true"
         android:label="cuidapet_supplier_mobile"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
