@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
 class ApplicationStartConfig {
@@ -9,5 +10,6 @@ class ApplicationStartConfig {
 
   Future<void> _firebaseCoreConfig() async {
     await Firebase.initializeApp();
+    debugPrint(await FirebaseMessaging.instance.getToken());
   }
 }
