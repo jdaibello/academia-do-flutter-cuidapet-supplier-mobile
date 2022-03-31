@@ -1,14 +1,17 @@
-import 'package:cuidapet_supplier_mobile/app/core/local_storage/i_local_storage.dart';
+import 'package:cuidapet_supplier_mobile/app/core/helpers/logger/logger.dart';
+import 'package:cuidapet_supplier_mobile/app/core/helpers/logger/logger_impl.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    ILocalStorage localStorage = Modular.get();
-    localStorage.write<String>('X', '1234');
+    Logger logger = LoggerImpl();
+    logger.info('Olá HomePage');
+    logger.debug('Olá Debug');
+    logger.error('Olá Erro');
+    logger.warning('Olá Aviso');
 
     return Scaffold(
       appBar: AppBar(

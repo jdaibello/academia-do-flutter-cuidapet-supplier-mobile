@@ -1,4 +1,4 @@
-abstract class ILocalStorage {
+abstract class LocalStorage {
   Future<P?> read<P>(String key);
   Future<void> write<P>(String key, P value);
   Future<bool> contains(String key);
@@ -6,7 +6,7 @@ abstract class ILocalStorage {
   Future<void> remove(String key);
 }
 
-abstract class ILocalSecurityStorage {
+abstract class LocalSecurityStorage {
   Future<String?> read(String key);
   Future<void> write(String key, String value);
   Future<bool> contains(String key);

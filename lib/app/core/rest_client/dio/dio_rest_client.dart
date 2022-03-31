@@ -1,10 +1,10 @@
 import 'package:cuidapet_supplier_mobile/app/core/helpers/environments.dart';
-import 'package:cuidapet_supplier_mobile/app/core/rest_client/i_rest_client.dart';
+import 'package:cuidapet_supplier_mobile/app/core/rest_client/rest_client.dart';
 import 'package:cuidapet_supplier_mobile/app/core/rest_client/rest_client_exception.dart';
 import 'package:cuidapet_supplier_mobile/app/core/rest_client/rest_client_response.dart';
 import 'package:dio/dio.dart';
 
-class DioRestClient implements IRestClient {
+class DioRestClient implements RestClient {
   late Dio _dio;
 
   final BaseOptions _defaultBaseOptions = BaseOptions(
@@ -26,13 +26,13 @@ class DioRestClient implements IRestClient {
   }
 
   @override
-  IRestClient auth() {
+  RestClient auth() {
     _defaultBaseOptions.extra['auth_required'] = true;
     return this;
   }
 
   @override
-  IRestClient unauth() {
+  RestClient unauth() {
     _defaultBaseOptions.extra['auth_required'] = false;
     return this;
   }

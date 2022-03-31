@@ -1,7 +1,7 @@
-import 'package:cuidapet_supplier_mobile/app/core/local_storage/i_local_storage.dart';
+import 'package:cuidapet_supplier_mobile/app/core/local_storage/local_storage.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class FlutterSecurityStorageLocalStorage implements ILocalSecurityStorage {
+class FlutterSecurityStorageLocalStorage implements LocalSecurityStorage {
   FlutterSecureStorage get _instance => const FlutterSecureStorage();
 
   @override
