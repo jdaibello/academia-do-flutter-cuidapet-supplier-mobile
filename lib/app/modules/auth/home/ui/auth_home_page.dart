@@ -22,10 +22,10 @@ class AuthHomePage extends StatelessWidget {
           case AuthStatus.empty:
             break;
           case AuthStatus.logged:
-            Modular.to.navigate('/home');
+            Modular.to.popAndPushNamed('/home');
             break;
           case AuthStatus.unlogged:
-            Modular.to.navigate('/login');
+            Modular.to.popAndPushNamed('/login');
             break;
         }
       },
