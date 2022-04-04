@@ -3,6 +3,7 @@ import 'package:cuidapet_supplier_mobile/app/core/extensions/theme_extensions.da
 import 'package:cuidapet_supplier_mobile/app/modules/auth/register/presenter/controller/register_controller.dart';
 import 'package:cuidapet_supplier_mobile/app/modules/auth/register/presenter/controller/register_state.dart';
 import 'package:cuidapet_supplier_mobile/app/modules/auth/register/presenter/view_models/register_input_model.dart';
+import 'package:cuidapet_supplier_mobile/app/modules/auth/register/ui/steps/one/controller/register_step_one_controller.dart';
 import 'package:cuidapet_supplier_mobile/app/modules/auth/register/ui/steps/one/register_step_one_page.dart';
 import 'package:cuidapet_supplier_mobile/app/modules/auth/register/ui/steps/three/register_step_three_page.dart';
 import 'package:cuidapet_supplier_mobile/app/modules/auth/register/ui/steps/two/register_step_two_page.dart';
@@ -12,8 +13,13 @@ import 'package:steps_indicator/steps_indicator.dart';
 
 class RegisterPage extends StatelessWidget {
   final RegisterController controller;
+  final RegisterStepOneController registerStepOneController;
 
-  const RegisterPage({required this.controller, Key? key}) : super(key: key);
+  const RegisterPage({
+    required this.controller,
+    required this.registerStepOneController,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +111,7 @@ class RegisterPage extends StatelessWidget {
   Widget _showStep(int step, RegisterInputModel model) {
     switch (step) {
       case 1:
-        return const RegisterStepOnePage();
+        return RegisterStepOnePage(controller: registerStepOneController);
       case 2:
         return const RegisterStepTwoPage();
       case 3:

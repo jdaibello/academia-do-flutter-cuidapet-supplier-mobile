@@ -15,9 +15,9 @@ class RegisterController extends Bloc<RegisterEvent, RegisterState> {
       yield RegisterState(step: 1, model: state.model);
     }
 
-    // if (event is RegisterStepTwoEvent) {
-    //   yield RegisterState(step: 2, model: state.model);
-    // }
+    if (event is RegisterStepTwoEvent) {
+      yield RegisterState(step: 2, model: state.model);
+    }
   }
 
   void restartProcess() => add(RegisterStepRestartEvent());
